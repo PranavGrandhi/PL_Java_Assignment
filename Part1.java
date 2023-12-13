@@ -27,6 +27,18 @@ public class Part1 {
                 return 1;
             return -1;
         }
+
+        @Override
+        public String toString() {
+            String mySortedList = "";
+
+            for(int i = 0; i < this.size(); i++)
+            {
+                mySortedList += (this.get(i).toString() + " ");
+            }
+
+            return (mySortedList + '\n');
+        }
     }
 
     public class A implements Comparable<A> {
@@ -34,6 +46,20 @@ public class Part1 {
 
         A(Integer x) {
             this.a = x;
+        }
+
+        public Integer getInteger() {
+            return this.a;
+        }
+
+        @Override
+        public int compareTo(A other) {
+            return this.getInteger().compareTo(other.getInteger());
+        }
+
+        @Override
+        public String toString() {
+            return (this.getInteger().toString() + " ");
         }
     }
 
