@@ -52,6 +52,10 @@ public class Part1 {
             return this.a;
         }
 
+        public Integer getSum() {
+            return this.a;
+        }
+
         @Override
         public int compareTo(A other) {
             return this.getInteger().compareTo(other.getInteger());
@@ -62,6 +66,60 @@ public class Part1 {
             return (this.getInteger().toString() + " ");
         }
     }
+
+    public class B extends A {
+        Integer a;
+        Integer b;
+
+        B(Integer x, Integer y) {
+            super(x);
+            this.b = y;
+        }
+
+        public Integer getSum() {
+            return (this.a + this.b);
+        }
+
+        @Override
+        public int compareTo(A other) {
+            return this.getSum().compareTo(other.getSum());
+        }
+
+        @Override
+        public String toString() {
+            return (a.toString() + " " + b.toString() + " ");
+        }
+    }
+
+    /*static void test() {
+        SortedList<A> c1 = new SortedList<A>();
+        SortedList<A> c2 = new SortedList<A>();
+        for(int i = 35; i >= 0; i-=5) {
+            addToSortedList(c1, new A(i));
+            addToSortedList(c2, new B(i+2,i+3));
+        }
+        
+        System.out.print("c1: ");
+        System.out.println(c1);
+        
+        System.out.print("c2: ");
+        System.out.println(c2);
+    
+        switch (c1.compareTo(c2)) {
+        case -1: 
+            System.out.println("c1 < c2");
+            break;
+        case 0:
+            System.out.println("c1 = c2");
+            break;
+        case 1:
+            System.out.println("c1 > c2");
+            break;
+        default:
+            System.out.println("Uh Oh");
+            break;
+        }
+       }*/
 
     public static void main(String[] args) {
         System.out.println("Hi");
