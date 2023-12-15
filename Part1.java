@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SortedList<T extends Comparable<T>> extends ArrayList<T> implements Comparable<SortedList<T>> {
+class SortedList<T extends Comparable<T>> extends ArrayList<T> implements Comparable<SortedList<T>> {
     @Override
     public boolean add(T element) {
         super.add(element);
@@ -34,7 +34,8 @@ public class SortedList<T extends Comparable<T>> extends ArrayList<T> implements
         return (mySortedList + '\n');
     }
 }
-public class A implements Comparable<A> {
+
+class A implements Comparable<A> {
     Integer a;
     A(Integer x) {
         this.a = x;
@@ -55,7 +56,7 @@ public class A implements Comparable<A> {
     }
 }
 
-public class B extends A {
+class B extends A {
     Integer a;
     Integer b;
     B(Integer x, Integer y) {
