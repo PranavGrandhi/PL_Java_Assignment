@@ -52,19 +52,18 @@ class A implements Comparable<A> {
     }
     @Override
     public String toString() {
-        return (this.getInteger().toString() + " ");
+        return ("A<" + this.getInteger().toString() + "> ");
     }
 }
 
 class B extends A {
-    Integer a;
     Integer b;
     B(Integer x, Integer y) {
         super(x);
         this.b = y;
     }
     public Integer getSum() {
-        return (this.a + this.b);
+        return (getInteger() + this.b);
     }
     @Override
     public int compareTo(A other) {
@@ -72,7 +71,7 @@ class B extends A {
     }
     @Override
     public String toString() {
-        return (a.toString() + " " + b.toString() + " ");
+        return ("B<" + getInteger().toString() + "," + b.toString() + "> ");
     }
 }
 
