@@ -3,8 +3,12 @@ import java.util.*;
 class SortedList<T extends Comparable<T>> extends ArrayList<T> implements Comparable<SortedList<T>> {
     @Override
     public boolean add(T element) {
-        super.add(element);
-        Collections.sort(this);
+        int i = 0;
+        
+        while (i < size() && element.compareTo(get(i)) > 0) 
+            i++;
+
+        super.add(i, element);
         return true;
     }
 
