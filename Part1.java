@@ -26,12 +26,17 @@ class SortedList<T extends Comparable<T>> extends ArrayList<T> implements Compar
 
     @Override
     public String toString() {
-        String mySortedList = "";
-        for(int i = 0; i < this.size(); i++)
+        String mySortedList = "[[";
+        int s=this.size();
+        for(int i = 0; i < s; i++)
         {
-            mySortedList += (this.get(i).toString() + " ");
+            if(i == (s-1))
+                mySortedList += this.get(i).toString();
+            else
+                mySortedList += (this.get(i).toString() + " ");
         }
-        return (mySortedList + '\n');
+        mySortedList += "]]";
+        return mySortedList;
     }
 }
 
@@ -52,7 +57,7 @@ class A implements Comparable<A> {
     }
     @Override
     public String toString() {
-        return ("A<" + this.getInteger().toString() + "> ");
+        return ("A<" + this.getInteger().toString() + ">");
     }
 }
 
@@ -71,7 +76,7 @@ class B extends A {
     }
     @Override
     public String toString() {
-        return ("B<" + getInteger().toString() + "," + b.toString() + "> ");
+        return ("B<" + getInteger().toString() + "," + b.toString() + ">");
     }
 }
 
